@@ -1,4 +1,5 @@
 module Searchable 
+require './knight_travails.rb'
 
 
     def dfs(target = nil, &prc)
@@ -35,7 +36,6 @@ module Searchable
 
         nil 
 
-
     end 
 
 end
@@ -45,8 +45,17 @@ class PolyTreeNode
     include Searchable
 require 'byebug'
     attr_reader :parent, :children, :value
+
+
+    def self.root_node(initial_pos = [0,0])
+
+        self.new(initial_pos)
+
+    end 
+
   
     def initialize(value)
+
 
         @children = []
 
@@ -55,6 +64,8 @@ require 'byebug'
         @value = value
 
     end 
+
+
 
 
     def parent=(node)
